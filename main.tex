@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{ms04030}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -49,12 +49,36 @@
 
   \begin{solution}
     % Write your solution here
+    Part i:
+    
+    For it to be a partial function the domain should be all integers, i.e
+    Domain = $\{x | x \epsilon \mathbb{Z}\}$
+    and the co-domain would also be $ \{y | y \epsilon \mathbb{R}\} $
+    
+    Part ii:
+    
+    For it to be a total function the domain should be the set of natural numbers or positive integers, i.e
+    Domain = $ \{x | x \epsilon \mathbb{N} \}$
+    and the co-domain would still be $ \{y | y \epsilon \mathbb{R} \} $
+    
+    
+    
   \end{solution}
   
   \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
     % Write your solution here
+    
+    
+    For the function to be valid the relation should be one-to-one.
+    
+    \\The set of bit strings yields an integer (which is the required co-domain) for each of it's elements except for when the bit string contains all zeroes. 
+    
+    \\ Thus, the one-to-one relation is rebuted and $f$ is not a function.
+    
+
+    
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -66,6 +90,85 @@
 
   \begin{solution}
     % Write your solution here
+    
+    Equivalence relations hold true three basic properties:
+    
+    \begin{itemize}
+        \item Reflexive property
+        \item Symmetric property
+        \item Transitive property
+    \end{itemize}
+    
+    
+    Thus, we check if these properties hold true for the following statements
+
+    
+    Part i:
+    
+    The reflexive relation holds true as,
+    
+    $(X,X)$ and $(Y,Y)$ $\epsilon$ $S$
+    
+    The symmetric property holds true as,
+    
+    $(X,Y)$ is the same as $(Y,X)$
+    
+    However, it does not hold the transitive property, i.e.
+    
+    If some student Z is in class with X $(X,Z)$  ,then this does not imply that it has been in that class with Y 
+    
+    
+    \textbf{Hence, This is not an equivalence relation.}
+    
+    Part ii:
+    
+    The reflexive property holds true as,
+    
+    all elements rhyme with themselves.
+    
+    $(X,X)$ and $(Y,Y)$ $\epsilon$ $S$
+    
+    
+    The symmetric property also holds true,
+    
+    as if X rhymes with Y then Y rhymes with X.
+    
+    $(X,Y)$ $\rightarrow$ $(Y,X)$
+    
+    
+    The transitive property holds true as well such that,
+    
+    if X rhymes with Z and X rhymes with Y then this implies that Z rhymes with Y.
+    
+    
+        $(X,Z) \wedge (X,Y) \rightarrow (Z,Y)$
+        
+    \textbf{Hence, this is an equivalence relation.}
+    
+    
+    Part iii:
+    
+    The reflexive relation holds true,
+    
+    as all sets are subsets of themselves.
+    
+    $(X,X)$ and $(Y,Y)$ $\epsilon$ $S$
+    
+    The symmetric property does not hold true as,
+    
+    if X is a subset of Y this does not imply that Y is a subset of X.
+    
+    \textbf{Hence, this is not an equivalence relation.}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   \end{solution}
 
 \end{parts}
@@ -74,6 +177,30 @@
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
   \begin{solution}
     % Write your solution here
+    
+    Suppose that $x \in A$
+    and $y \in B$
+    
+    if $ f(x) = y $
+    
+    then, $ f^{-1}(y) = x$
+    
+    Thus,
+    $ \exists x \in A $ such that $f(x) \in y $
+    
+    $\implies$ $y \in f(A)$
+    
+    if $y \in f(A)$ $\wedge$ $y \in B$ $\rightarrow f(A) \in B$
+    
+    that is,
+    
+    $f(A) \subseteq B$
+    
+    
+    
+    
+    
+    
   \end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
@@ -89,6 +216,12 @@
 
   \begin{solution}
     % Write your solution here
+    If A and B have both a surjective and injective relation, they have a bijective relation.
+    
+    If A and B are bijective, they have similar cardinalties.
+    \textbf{Hence Proved!}
+    
+    
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -122,10 +255,61 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
   \begin{solution}
     % Write your solution here
+    
+    To derive an expression, we consider the given informstion.
+    
+    From the series, we can observe a few patterns,
+
+    Cap width starts being 1 higher than the degree of mushroom and increases by 1 in every recursion, i.e,
+    2,3,4,5....,n
+    
+    $ C_w = n + 1 $
+    
+    Cap height is 0,1,2,2,3,3....,n
+    
+    $ C_h = [n/2] + 1 $
+    
+    The stem height is always 1 less than n, i.e,
+    
+    0,1,2,3....n
+    
+    $ S_h = n -1$
+    
+    Thus, we put this term in to the formula of an arithmetic progression with common difference (-1) to get,
+    
+    $M_n =$ $C_h/2 [2(C_w) + (CapHeight−1)(−1)]$
+    
+    $M_n =$ $[[n/2] + 1]/2 [2(n + 1) + ([[n/2] + 1]−1)(−1)]$
+    
+    
+    By adding the stem height to this expression we find $M_n$,
+    
+    $M_n =$ $[[n/2] + 1]/2 [2(n + 1) + ([[n/2] + 1]−1)(−1)] + (n-1)$
+    
+
+    
+    
+    
+    
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
     % Write your solution here
+    
+    Using the patterns and expressions we found,
+    
+    $Height = C_h + S_h $
+    
+    $H = ([n/2] + 1 ) + (n - 1)$
+    
+    Here, n = 20
+    
+    Thus,
+    
+    $H = ([20/2] + 1 ) + (20-1) $
+    
+    $H = 30 $ units.    
+    
   \end{solution}
 \end{parts}
 
@@ -154,6 +338,11 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
  
     \begin{solution}
     % Write your solution here
+    By mapping each element of the Fibonacci series to the set of Natural numbers we can check it's coutability.
+    
+    As the set of natural numbers is a countable set we can consider the Fibonacci series to be countable as well.
+        
+    
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Modified Wythoff Array is countable. 
 
